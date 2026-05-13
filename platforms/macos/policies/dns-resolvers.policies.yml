@@ -4,7 +4,5 @@
   description: This device is not using Cloudflare DNS, which may lead to slower DNS resolution times and potential security risks.
   resolution: Change the DNS resolver to Cloudflare at 1.1.1.1
   platform: darwin
-- policies:
-    paths: ../platforms/macos/policies/*.yml
-    paths: ../platforms/windows/policies/*.yml
-    paths: ../platforms/linux/policies/*.yml
+  run_script:
+    path: ../scripts/set-cloudflare-dns.sh
