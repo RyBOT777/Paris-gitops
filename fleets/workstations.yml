@@ -16,6 +16,18 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 name: "💻 Workstations"
 controls:
+  apple_settings:
+    configuration_profiles:
+      - paths: ../platforms/ios/configuration-profiles/passcode-settings.json
+        labels_exclude_any:
+          - C-Suite
+  ipados_updates:
+    deadline: "2026-07-30"
+    minimum_version: "26.2"
+  scripts:
+    - paths: ../platforms/windows/scripts/*ps1.sh
+      labels_include_any:
+        - "Macs with 1Password installed"
   setup_experience:
     ###########################################################
     # Configure the macOS setup experience
@@ -82,8 +94,8 @@ controls:
   # Read more here:
   #   • https://fleetdm.com/guides/enforce-disk-encryption
   ###########################################################
-  # enable_disk_encryption: true
-
+  enable_disk_encryption: true
+  enable_recovery_lock_password: true
   ###########################################################
   # Managed OS updates
   #
